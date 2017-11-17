@@ -60,7 +60,22 @@ namespace OpenTracing.NullTracer
             return this;
         }
 
-        public ISpan Start()
+        public ISpanBuilder IgnoreActiveSpan()
+        {
+            return this;
+        }
+
+        public IScope StartActive()
+        {
+            return NullScope.Instance;
+        }
+
+        public IScope StartActive(bool finishSpanOnClose)
+        {
+            return NullScope.Instance;
+        }
+
+        public ISpan StartManual()
         {
             return NullSpan.Instance;
         }
