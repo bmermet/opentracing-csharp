@@ -6,6 +6,8 @@ namespace OpenTracing.NullTracer
     {
         public static readonly NullTracer Instance = new NullTracer();
 
+        public IScopeManager ScopeManager => NullScopeManager.Instance;
+
         private NullTracer()
         {
         }

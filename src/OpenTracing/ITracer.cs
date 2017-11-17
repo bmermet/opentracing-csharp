@@ -8,6 +8,11 @@ namespace OpenTracing
     public interface ITracer
     {
         /// <summary>
+        /// Returns the current <see cref="IScopeManager"/>, which may be a noop but may not be null.
+        /// </summary>
+        IScopeManager ScopeManager { get; }
+
+        /// <summary>
         /// Returns a new <see cref="ISpanBuilder" /> for a span with the given <paramref name="operationName" />.
         /// </summary>
         /// <param name="operationName">The operation name of the span.</param>
